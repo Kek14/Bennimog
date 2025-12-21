@@ -1,0 +1,32 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            if = {
+                limit = {
+                    # Ensure this rule and option are defined in common/game_rules/
+                    has_game_rule = {
+                        rule = No_Asia_game_rule
+                        option = NO_ASIA_JA
+                    }
+                }
+                # Place all the actual annexation effects here, inside a country scope
+                PRC = {
+                    annex_country = { target = CHI transfer_troops = no }
+                    annex_country = { target = JAP transfer_troops = no }
+                    annex_country = { target = RAJ transfer_troops = no }
+                    annex_country = { target = SIA transfer_troops = no }
+                    annex_country = { target = AST transfer_troops = no }
+                    annex_country = { target = NZL transfer_troops = no }
+                    annex_country = { target = MAN transfer_troops = no }
+                    annex_country = { target = MEN transfer_troops = no }
+                    annex_country = { target = PHI transfer_troops = no }
+
+                }
+                USA = {add_ideas = {    USA_no_asia
+                                        USA_no_asia2
+                    }
+                    }
+            }
+        }
+    }
+}

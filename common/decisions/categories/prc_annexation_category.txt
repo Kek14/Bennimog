@@ -1,0 +1,7 @@
+prc_annexation_category = {
+    icon = generic_political_actions
+
+
+    allowed = {
+        original_tag = SOV
+    }

@@ -1,0 +1,29 @@
+brazil_foreign_policy = {
+    join_the_allies_decision = {
+        icon = generic_political_actions
+
+        allowed = {
+            original_tag = BRA
+        }
+        # Requirements for the button to be clickable
+        available = {
+            ENG = { exists = yes }
+            NOT = { is_in_faction = yes }
+            ENG = { is_in_faction = yes } # Ensure ENG leads a faction
+        }
+
+        # What happens when you click it
+        complete_effect = {
+            add_to_faction = BRA
+            log = "[GetDateText]: [Root.GetName] joined the Allies via decision."
+        }
+
+        ai_will_do = {
+            base = 1
+            modifier = {
+                factor = 10
+
+            }
+        }
+    }
+}

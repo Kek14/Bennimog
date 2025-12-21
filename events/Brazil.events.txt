@@ -1,0 +1,28 @@
+add_namespace = brazil_event # Required at the top of the file
+
+country_event = {
+	id = brazil_event.1
+	title = brazil_event.1.t
+	desc = brazil_event.1.d
+	picture = GFX_report_event_brazilian_soldiers # Standard vanilla event image
+
+	# This event is designed to be triggered by a focus, decision, or the console
+	is_triggered_only = no
+
+  trigger = {
+    tag = BRA
+    date > 1936.1.1
+    NOT = { has_global_flag = bra_joined_allies }
+}
+immediate = { set_global_flag = bra_joined_allies }
+
+option = {
+  name = brazil_event.1.a
+  # Force the UK (ENG) to add the current country (ROOT) to its faction
+  ENG = {
+      add_to_faction = ROOT
+  }
+}
+
+	
+}

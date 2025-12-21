@@ -1,0 +1,21 @@
+prc_annexation_category = {
+
+    annex_asia_decision = {
+        cost = 0
+
+
+        fire_only_once = yes
+        available = {
+
+            PRC = { is_at_war = no }
+        }
+
+
+        complete_effect = {
+            PRC = {
+
+            annex_country = { target = ETH transfer_troops = no }
+            
+
+            }
+        }

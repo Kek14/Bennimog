@@ -1,0 +1,67 @@
+add_namespace = mod
+
+# No Asia
+country_event = {
+	id = mod.2
+	title = mod.2.t
+	desc = mod.2.desc
+	picture = GFX_report_event_japanese_parade
+
+	is_triggered_only = yes
+	
+	option = {
+		add_country_leader_role = {
+			character = JAP_emperor_hirohito
+			country_leader = {
+				expire = "1989.1.1"
+				ideology = communism
+				traits = {
+					warrior_code
+					emperor_showa
+				}
+				id = 700 #Hirohito
+			}
+			promote_leader = yes
+		}
+	}
+	mean_time_to_happen = {
+    days = 1
+	
+
+
+		}
+}
+
+
+news_event = {
+	id = mod.1
+	title = "Marco Polo Bridge incident"
+	desc = "I cannot believe they would do this. What do we do now? We can send an attache and admit that we are gay or we could sit this one out"
+	picture = GFX_mod_1
+	is_triggered_only = yes
+	major = yes
+			
+
+
+
+	option = {
+	name = "We cannot afford to be gay right now"
+	add_political_power = +1
+	}
+	
+	option = {
+		name = "Send an attache (gay)"
+		add_political_power = -100
+		add_war_support = 0.1
+		army_experience = 100
+	}
+
+	mean_time_to_happen = {
+    days = 1
+	
+
+
+		}
+	
+	}
+

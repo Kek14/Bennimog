@@ -1,0 +1,2606 @@
+﻿focus_tree = {
+	id = mongolian_focus
+
+	country = {
+		factor = 0
+
+		modifier = {
+			add = 10
+			tag = MON
+		}
+	}
+
+	default = no
+
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	focus = {
+		id = mon_consolidate_peoples_republic
+		icon = GFX_focus_generic_join_comintern
+		prerequisite = { }
+		x = 15
+		y = 0
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_political_power = 50
+		}
+	}
+	focus = {
+		id = mon_restore_party_discipline
+		icon = GFX_focus_YUG_pan_slavic_congress
+		prerequisite = { focus = mon_consolidate_peoples_republic }
+		x = 0
+		y = 1
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_political_instability
+			add_idea = mon_political_instability_2
+			}
+		}
+	}
+	focus = {
+		id = mon_purge_traitors
+		icon =  GFX_focus_SOV_military_purge
+		prerequisite = { focus = mon_restore_party_discipline}
+		x = 0
+		y = 1
+		relative_position_id = mon_restore_party_discipline
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_timed_idea = { idea = mon_purges days = 365}
+		}
+	}
+		focus = {
+		id = mon_establish_political_commisars
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = mon_purge_traitors}
+		x = -1
+		y = 1
+		relative_position_id = mon_purge_traitors
+
+		cost = 5
+
+		available = {
+		NOT = { has_idea = mon_purges }
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_political_instability_2
+			add_idea = mon_political_instability_3
+			}
+		}
+	}
+		focus = {
+		id = mon_cultural_revolution
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = mon_purge_traitors}
+		x = 1
+		y = 1
+		relative_position_id = mon_purge_traitors
+		cost = 5
+
+		available = {
+		NOT = { has_idea = mon_purges }
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_war_support = 0.05
+		add_political_power = 100
+		}
+	}
+		focus = {
+		id = mon_expand_soviet_cooperation
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = mon_strengten_ties_with_Soviet }
+		x = 0
+		y = 1
+		relative_position_id = mon_strengten_ties_with_Soviet
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_limited_soviet_support
+			add_idea = mon_expanded_soviet_support
+			}
+		}
+	}
+		focus = {
+		id = mon_suppression_of_resistance
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = mon_cultural_revolution }
+		prerequisite = { focus = mon_establish_political_commisars }
+		x = -5
+		y = 1
+		relative_position_id = mon_cultural_revolution
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_stability = 0.05
+		add_manpower = -4000
+
+		}
+	}
+		focus = {
+		id = mon_integrate_sinkiang_administration
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = mon_suppression_of_resistance}
+		x = 0
+		y = 1
+		relative_position_id = mon_suppression_of_resistance
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+		focus = {
+		id = mon_expand_party_control
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = mon_cultural_revolution}
+		prerequisite = { focus = mon_establish_political_commisars }
+		x = -1
+		y = 1
+		relative_position_id = mon_cultural_revolution
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_political_instability_3
+			add_idea = mon_political_instability_4
+			}
+		}
+	}
+		focus = {
+		id = mon_modernize_administration
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = mon_expand_party_control}
+		x = 0
+		y = 1
+		relative_position_id = mon_expand_party_control
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_political_instability_4
+			add_idea = mon_political_instability_5
+			}
+		}
+	}
+		focus = {
+		id = mon_promote_revolutionary_zeal
+		icon = GFX_goal_support_communism
+		prerequisite = { focus = mon_modernize_administration}
+		x = 0
+		y = 1
+		relative_position_id = mon_modernize_administration
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_stability = 0.1
+		add_war_support = 0.1
+		}
+	}
+		focus = {
+		id = mon_central_committee_reforms
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = mon_promote_revolutionary_zeal}
+		x = 0
+		y = 1
+		relative_position_id = mon_promote_revolutionary_zeal
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_political_instability_5
+			add_idea = mon_political_instability_6
+			}
+		}
+	}
+		focus = {
+		id = mon_strengten_ties_with_Soviet
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		prerequisite = { focus = mon_cultural_revolution}
+		prerequisite = { focus = mon_establish_political_commisars }
+		x = 2
+		y = 1
+		relative_position_id = mon_cultural_revolution
+
+		cost = 2
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_political_power = 25
+		}
+	}
+	focus = {
+		id = mon_educational_efforts
+		icon = GFX_focus_research2
+		prerequisite = { focus = mon_build_railway_connections}
+		prerequisite = { focus = mon_strengten_ties_with_Soviet }
+		x = 2
+		y = 1
+		relative_position_id = mon_strengten_ties_with_Soviet
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		remove_ideas = mon_widespread_illiteracy
+		}
+	}
+	focus = {
+		id = mon_build_research_institute
+		icon = GFX_focus_research
+		prerequisite = { focus = mon_educational_efforts}
+		x = 0
+		y = 1
+		relative_position_id = mon_educational_efforts
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_research_slot = 1
+		}
+	}
+		focus = {
+		id = mon_announce_mongolian_socialist_model
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = mon_central_committee_reforms}
+		x = 0
+		y = 1
+		relative_position_id = mon_central_committee_reforms
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_stability = 0.25
+		add_war_support = 0.2
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+		focus = {
+		id = mon_draft_first_five_year_plan
+		icon = GFX_focus_generic_industry_1
+		prerequisite = { }
+		x = 11
+		y = 0
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 5
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_underdeveloped_economy
+			add_idea = mon_five_year_plan
+			}
+		}
+	}
+		focus = {
+		id = mon_nationalize_key_industries
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = mon_draft_first_five_year_plan}
+		x = 1
+		y = 1
+		relative_position_id = mon_draft_first_five_year_plan
+
+		cost = 5
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_five_year_plan
+			add_idea = mon_five_year_plan_1
+			}
+		}
+	}
+		focus = {
+		id = mon_support_light_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = mon_draft_first_five_year_plan}
+		x = -1
+		y = 1
+		relative_position_id = mon_draft_first_five_year_plan
+
+		cost = 5
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+		focus = {
+		id = mon_mechanize_agriculture
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = mon_nationalize_key_industries}
+		prerequisite = { focus = mon_support_light_industry}
+		x = 1
+		y = 1
+		relative_position_id = mon_support_light_industry
+
+		cost = 10
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+					random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		swap_ideas = {
+			remove_idea = mon_five_year_plan_1
+			add_idea = mon_five_year_plan_2
+			}
+		}
+	}
+		focus = {
+		id = mon_expand_state_mining_company
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = mon_mechanize_agriculture}
+		x = 4
+		y = 1
+		relative_position_id = mon_mechanize_agriculture
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+		add_ideas = mon_state_mining_company
+					random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = mon_excavation_expansion
+				bonus = 1
+				uses = 1
+				category = excavation_tech
+			}
+		}
+	}
+		focus = {
+		id = mon_develop_new_tungsten_mines
+		icon = GFX_focus_generic_mining_industry
+		prerequisite = { focus = mon_expand_state_mining_company}
+		x = 1
+		y = 1
+		relative_position_id = mon_expand_state_mining_company
+
+		cost = 5
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			617 = {
+			 add_resource = {
+                    type = tungsten
+                    amount = 10
+                }
+			}
+			817 = {
+			 add_resource = {
+                    type = tungsten
+                    amount = 5
+                }
+			}
+		}
+	}
+		focus = {
+		id = mon_explore_steppe_resources
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = mon_expand_state_mining_company}
+		x = -1
+		y = 1
+		relative_position_id = mon_expand_state_mining_company
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			618 = {
+			 add_resource = {
+                    type = chromium
+                    amount = 7
+                }
+			}
+			619 = {
+			 add_resource = {
+                    type = steel
+                    amount = 11
+                }
+			}
+			619 = {
+			 add_resource = {
+                    type = aluminium
+                    amount = 2
+                }
+			}
+		}
+	}
+		focus = {
+		id = mon_expand_tungsten_mines
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = mon_develop_new_tungsten_mines}
+		x = 0
+		y = 1
+		relative_position_id = mon_develop_new_tungsten_mines
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			617 = {
+			 add_resource = {
+                    type = tungsten
+                    amount = 8
+                }
+			 add_resource = {
+                    type = oil
+                    amount = 1
+                }
+			}
+			817 = {
+			 add_resource = {
+                    type = tungsten
+                    amount = 3
+                }
+			}
+		}
+	}
+		focus = {
+		id = mon_ulaanbaatar_steel_mills
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = mon_explore_steppe_resources}
+		x = 0
+		y = 1
+		relative_position_id = mon_explore_steppe_resources
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			330 = {
+			 add_resource = {
+                    type = steel
+                    amount = 17
+                }
+			}
+		}
+	}
+		focus = {
+		id = mon_strengten_state_resource_authority
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = mon_ulaanbaatar_steel_mills}
+		prerequisite = { focus = mon_expand_tungsten_mines}
+		x = 1
+		y = 1
+		relative_position_id = mon_ulaanbaatar_steel_mills
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+				complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_state_mining_company
+			add_idea = mon_expanded_state_mining_company
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+		focus = {
+		id = mon_electrify_the_countryside
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = mon_mechanize_agriculture}
+		x = -4
+		y = 1
+		relative_position_id = mon_mechanize_agriculture
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+		        limit = {
+			    has_idea = mon_five_year_plan_2
+			    }
+			swap_ideas = {
+			remove_idea = mon_five_year_plan_2
+			add_idea = mon_five_year_plan_3
+			    }
+		    }
+			if = {
+		        limit = {
+			    has_idea = mon_five_year_plan_4
+			    }
+			swap_ideas = {
+			remove_idea = mon_five_year_plan_4
+			add_idea = mon_five_year_plan_5
+			    }
+		    }
+				add_tech_bonus = {
+				name = mon_construction_research
+				bonus = 1
+				uses = 1
+				category = construction_tech
+			}
+		}
+	}
+		focus = {
+		id = mon_build_railway_connections
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = mon_electrify_the_countryside}
+		x = -1
+		y = 1
+		relative_position_id = mon_electrify_the_countryside
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		if = {
+                limit = {
+                    controls_province = 4801
+                    controls_province = 4732
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 4801
+                    target_province = 4732
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 4732
+                    controls_province = 1798
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 4732
+                    target_province = 1798
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 1798
+                    controls_province = 1728
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 1798
+                    target_province = 1728
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 1728
+                    controls_province = 12614
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 1728
+                    target_province = 12614
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 12614
+                    controls_province = 10634
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 12614
+                    target_province = 10634
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 10634
+                    controls_province = 1855
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 10634
+                    target_province = 1855
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 1855
+                    controls_province = 7808
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 1855
+                    target_province = 7808
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 7808
+                    controls_province = 7737
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 7808
+                    target_province = 7737
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 7737
+                    controls_province = 4788
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 7737
+                    target_province = 4788
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 4788
+                    controls_province = 10674
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 4788
+                    target_province = 10674
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 10674
+                    controls_province = 4709
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 10674
+                    target_province = 4709
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 4801
+                    controls_province = 10554
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 4801
+                    target_province = 10554
+                }
+            }
+		if = {
+                limit = {
+                    controls_province = 10554
+                }
+
+                build_railway = {
+                    level = 2
+                    start_province = 10554
+                    target_province = 4766
+                }
+            }
+		}
+	}
+		focus = {
+		id = mon_infrastructure_investments
+		icon = GFX_focus_generic_truck
+		prerequisite = { focus = mon_electrify_the_countryside}
+		x = 1
+		y = 1
+		relative_position_id = mon_electrify_the_countryside
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+					random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 1
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 1
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = mon_transformation_of_nature
+		icon = GFX_goal_generic_soviet_construction
+		prerequisite = { focus = mon_infrastructure_investments }
+		prerequisite = { focus = mon_build_railway_connections }
+		x = -1
+		y = 1
+		relative_position_id = mon_infrastructure_investments
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_fully_controlled_by = ROOT
+					is_core_of = ROOT
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+			330 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 1859
+					}
+				}
+			}
+			custom_effect_tooltip = {
+				localization_key = building_state_modifier|dam
+				INDENT = "    "
+			}
+			custom_effect_tooltip = generic_skip_one_line_tt
+				617 = {
+				add_building_construction = {
+					type = dam
+					level = 1
+					instant_build = yes
+					province = {
+						id = 12526
+					}
+				}
+			}
+			custom_effect_tooltip = {
+				localization_key = building_state_modifier|dam
+				INDENT = "    "
+			}
+		}
+	}
+	focus = {
+		id = mon_develop_heavy_industry
+		icon = GFX_SOV_foreign_experts_ccp_2d_sov_compatibility
+		prerequisite = { focus = mon_mechanize_agriculture}
+		x = 0
+		y = 1
+		relative_position_id = mon_mechanize_agriculture
+
+		cost = 10
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+				add_tech_bonus = {
+				name = mon_industrial_research
+				bonus = 1
+				uses = 1
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = mon_expand_defense_industries
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = mon_develop_heavy_industry}
+		x = 1
+		y = 1
+		relative_position_id = mon_develop_heavy_industry
+
+		cost = 10
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = mon_based
+		allow_branch = { has_idea = SOV_war_measures_allies }
+		icon = GFX_focus_generic_join_comintern
+		x = 20
+		y = 0
+
+		cost = 10
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_popularity = { ideology = neutrality popularity = 1 }
+			set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+			retire_country_leader = yes
+		}
+		}
+	}
+
+	focus = {
+		id = mon_build_new_foundries
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = mon_develop_heavy_industry}
+		x = -1
+		y = 1
+		relative_position_id = mon_develop_heavy_industry
+
+		cost = 10
+
+		available = {
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+				complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			330 = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			 add_resource = {
+                    type = steel
+                    amount = 4
+                }
+			}
+		}
+	}
+	focus = {
+		id = mon_establish_mongolian_heavy_machinery
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = mon_expand_defense_industries}
+		prerequisite = { focus = mon_build_new_foundries}
+		x = 1
+		y = 1
+		relative_position_id = mon_build_new_foundries
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+		        limit = {
+			    has_idea = mon_five_year_plan_2
+			    }
+			swap_ideas = {
+			remove_idea = mon_five_year_plan_2
+			add_idea = mon_five_year_plan_4
+			    }
+		    }
+			if = {
+		        limit = {
+			    has_idea = mon_five_year_plan_3
+			    }
+			swap_ideas = {
+			remove_idea = mon_five_year_plan_3
+			add_idea = mon_five_year_plan_5
+			    }
+		    }
+		}
+	}
+		focus = {
+		id = mon_complete_five_year_plan
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = mon_establish_mongolian_heavy_machinery}
+		prerequisite = { focus = mon_transformation_of_nature}
+		x = 2
+		y = 1
+		relative_position_id = mon_transformation_of_nature
+
+		cost = 10
+
+		available = {
+			num_of_factories > 25
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_five_year_plan_5
+			add_idea = mon_five_year_plan_6
+			    }
+		}
+	}
+		focus = {
+		id = mon_industrial_miracle
+		icon = GFX_focus_spa_the_spanish_miracle
+		prerequisite = { focus = mon_complete_five_year_plan}
+		x = 0
+		y = 1
+		relative_position_id = mon_complete_five_year_plan
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+
+
+
+
+	focus = {
+		id = mon_reform_army_command
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { }
+		x = 22
+		y = 0
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_backward_military_structure
+			add_idea = mon_backward_military_structure_1
+			}
+		}
+	}
+	focus = {
+		id = mon_modernize_military_equipment
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = mon_reform_army_command}
+		x = -1
+		y = 1
+		relative_position_id = mon_reform_army_command
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_backward_military_structure_1
+			add_idea = mon_military_structure
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = arms_factory
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = mon_open_military_academies
+		icon = GFX_focus_research2
+		prerequisite = { focus = mon_reform_army_command}
+		x = 1
+		y = 1
+		relative_position_id = mon_reform_army_command
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_research_slot = 1
+		}
+	}
+	focus = {
+		id = mon_expand_officer_corps
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = mon_open_military_academies}
+		prerequisite = { focus = mon_modernize_military_equipment}
+		mutually_exclusive = {focus = mon_preserve_calvary_traditions }
+		mutually_exclusive = {focus = mon_steel_beasts_of_great_steppes }
+		x = -3
+		y = 1
+		relative_position_id = mon_modernize_military_equipment
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		MON_big_chungus = {
+			add_trait = { trait = infantry_leader}
+			}
+		swap_ideas = {
+			remove_idea = mon_military_structure
+			add_idea = mon_military_structure_1
+			}
+
+		}
+	}
+	focus = {
+		id = mon_adopt_soviet_inf_tactics
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = mon_expand_officer_corps}
+		x = 1
+		y = 1
+		relative_position_id = mon_expand_officer_corps
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = mon_military_structure_1
+					}
+			swap_ideas = {
+				remove_idea = mon_military_structure_1
+				add_idea = mon_military_structure_2
+			    }
+		    }
+			if = {
+		        limit = {
+					has_idea = mon_military_structure_3
+			    }
+			swap_ideas = {
+				remove_idea = mon_military_structure_3
+				add_idea = mon_military_structure_4
+			    }
+		    }
+		}
+	}
+	focus = {
+		id = mon_extend_special_forces_training
+		icon = GFX_focus_eng_special_air_service
+		prerequisite = { focus = mon_expand_officer_corps}
+		x = -1
+		y = 1
+		relative_position_id = mon_expand_officer_corps
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = mon_military_structure_1
+					}
+			swap_ideas = {
+				remove_idea = mon_military_structure_1
+				add_idea = mon_military_structure_3
+			    }
+		    }
+			if = {
+		        limit = {
+					has_idea = mon_military_structure_2
+			    }
+			swap_ideas = {
+				remove_idea = mon_military_structure_2
+				add_idea = mon_military_structure_4
+			    }
+		    }
+		}
+	}
+	focus = {
+		id = mon_abandon_calvary_units
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = mon_adopt_soviet_inf_tactics}
+		prerequisite = { focus = mon_extend_special_forces_training}
+		x = 1
+		y = 1
+		relative_position_id = mon_extend_special_forces_training
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = mon_military_structure_4
+				add_idea = mon_military_structure_5
+			    }
+		}
+	}
+	focus = {
+		id = mon_preserve_calvary_traditions
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = mon_modernize_military_equipment}
+		prerequisite = { focus = mon_open_military_academies}
+		mutually_exclusive = {focus = mon_expand_officer_corps }
+		mutually_exclusive = {focus = mon_steel_beasts_of_great_steppes }
+		x = 1
+		y = 1
+		relative_position_id = mon_modernize_military_equipment
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		MON_big_chungus = {
+			add_trait = { trait = cavalry_leader}
+			}
+		swap_ideas = {
+				remove_idea = mon_military_structure
+				add_idea = mon_traditional_army
+			    }
+		}
+	}
+	focus = {
+		id = mon_create_mobile_step_tactics
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = mon_preserve_calvary_traditions}
+		x = -1
+		y = 1
+		relative_position_id = mon_preserve_calvary_traditions
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = mon_traditional_army
+					}
+			swap_ideas = {
+				remove_idea = mon_traditional_army
+				add_idea = mon_technological_traditional_army_1
+			    }
+		    }
+			if = {
+		        limit = {
+					has_idea = mon_technological_traditional_army_2
+			    }
+			swap_ideas = {
+				remove_idea = mon_technological_traditional_army_2
+				add_idea = mon_technological_traditional_army_3
+			    }
+		    }
+		}
+	}
+	focus = {
+		id = mon_mechanized_warriors
+		icon = GFX_focus_generic_mechanized
+		prerequisite = { focus = mon_preserve_calvary_traditions focus = mon_steel_beasts_of_great_steppes}
+		x = 1
+		y = 1
+		relative_position_id = mon_preserve_calvary_traditions
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = mon_traditional_army
+					}
+			swap_ideas = {
+				remove_idea = mon_traditional_army
+				add_idea = mon_technological_traditional_army_2
+			    }
+		    }
+			if = {
+		        limit = {
+					has_idea = mon_technological_traditional_army_1
+			    }
+			swap_ideas = {
+				remove_idea = mon_technological_traditional_army_1
+				add_idea = mon_technological_traditional_army_3
+			    }
+		    }
+			if = {
+		        limit = {
+					has_idea = mon_steel_beasts
+			    }
+			swap_ideas = {
+				remove_idea = mon_steel_beasts
+				add_idea = mon_steel_beasts_1
+			    }
+		    }
+		}
+	}
+	focus = {
+		id = mon_expand_motorized_forces
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = mon_mechanized_warriors}
+		prerequisite = { focus = mon_create_mobile_step_tactics}
+		x = 1
+		y = 1
+		relative_position_id = mon_create_mobile_step_tactics
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = mon_technological_traditional_army_3
+				add_idea = mon_technological_traditional_army_4
+			}
+		}
+	}
+	focus = {
+		id = mon_steel_beasts_of_great_steppes
+		icon =
+		prerequisite = { focus = mon_modernize_military_equipment}
+		prerequisite = { focus = mon_open_military_academies}
+		mutually_exclusive = {focus = mon_preserve_calvary_traditions }
+		mutually_exclusive = {focus = mon_expand_officer_corps }
+		x = 4
+		y = 1
+		relative_position_id = mon_open_military_academies
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		MON_big_chungus = {
+			add_trait = { trait = panzer_leader}
+			}
+			swap_ideas = {
+				remove_idea = mon_military_structure
+				add_idea = mon_steel_beasts
+			}
+		}
+	}
+	focus = {
+		id = mon_tractor_conversion_factories
+		icon = GFX_focus_generic_tank_assembly
+		prerequisite = { focus = mon_steel_beasts_of_great_steppes}
+		mutually_exclusive = {focus = mon_dedicated_tank_factories }
+		x = -1
+		y = 1
+		relative_position_id = mon_steel_beasts_of_great_steppes
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = mon_tractor_conversion_factories_n
+		}
+	}
+	focus = {
+		id = mon_dedicated_tank_factories
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = mon_steel_beasts_of_great_steppes}
+		mutually_exclusive = {focus = mon_tractor_conversion_factories }
+		x = 1
+		y = 1
+		relative_position_id = mon_steel_beasts_of_great_steppes
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = mon_dedicated_tank_factories_n
+		}
+	}
+	focus = {
+		id = mon_who_could_have_expected_this
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = mon_dedicated_tank_factories focus = mon_tractor_conversion_factories}
+		prerequisite = { focus = mon_mechanized_warriors }
+		x = -2
+		y = 1
+		relative_position_id = mon_dedicated_tank_factories
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = mon_steel_beasts_1
+				add_idea = mon_steel_beasts_2
+			}
+		}
+	}
+
+	focus = {
+		id = mon_recruitment_policy
+		icon = GFX_focus_generic_treaty
+		prerequisite = { }
+		x = 27
+		y = 0
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 5
+
+		available = {
+		has_war_with = GER
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = mon_recruitment_policy
+		}
+	}
+	focus = {
+		id = mon_mobilize_economy
+		icon = GFX_goal_generic_production
+		prerequisite = { }
+		x = 25
+		y = 0
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 5
+
+		available = {
+		has_war_with = GER
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_timed_idea = { idea = mon_mobilizing_economy days = 365}
+		}
+	}
+	focus = {
+		id = mon_fight_for_our_survival
+		icon = GFX_focus_generic_total_war
+		prerequisite = { focus = mon_recruitment_policy }
+		prerequisite = { focus = mon_mobilize_economy }
+		x = -1
+		y = 1
+		relative_position_id = mon_recruitment_policy
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+				remove_idea = mon_recruitment_policy
+				add_idea = mon_fight_for_our_survival
+			}
+		}
+	}
+
+
+
+
+
+
+
+	focus = {
+		id = mon_found_mongolian_air_corps
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { }
+		x = 31
+		y = 0
+		relative_position_id = mon_consolidate_peoples_republic
+
+		cost = 3
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		air_experience = 50
+		mark_focus_tree_layout_dirty = yes
+		}
+	}
+	focus = {
+		id = mon_soviet_aviation_training
+		icon = GFX_focus_SOV_flying_clubs
+		prerequisite = { focus = mon_found_mongolian_air_corps}
+		x = 1
+		y = 1
+		relative_position_id = mon_found_mongolian_air_corps
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		add_ideas = mon_airforce_1
+		}
+	}
+	focus = {
+		id = mon_build_steppe_airfields
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = mon_found_mongolian_air_corps }
+		x = -1
+		y = 1
+		relative_position_id = mon_found_mongolian_air_corps
+
+		cost = 5
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+         random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+					#OR = {
+					#	region = 1
+					#	region = 2
+					#}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = air_base
+						size > 1
+					}
+					#OR = {
+					#	region = 1
+					#	region = 2
+					#}
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = mon_establish_national_air_academy
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = mon_build_steppe_airfields }
+		prerequisite = { focus = mon_soviet_aviation_training }
+		x = -1
+		y = 1
+		relative_position_id = mon_soviet_aviation_training
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_airforce_1
+			add_idea = mon_airforce_2
+			}
+		}
+	}
+	focus = {
+		id = mon_prioritize_defensive_air
+		icon = GFX_goal_generic_air_production
+		prerequisite = { focus = mon_establish_national_air_academy}
+		x = 0
+		y = 1
+		relative_position_id = mon_establish_national_air_academy
+
+		cost = 10
+
+		available = {
+		}
+
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		available_if_capitulated = yes
+
+		completion_reward = {
+		swap_ideas = {
+			remove_idea = mon_airforce_2
+			add_idea = mon_airforce_3
+			}
+		}
+	}
+
+
+}
