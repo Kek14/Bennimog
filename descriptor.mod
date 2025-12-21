@@ -10,6 +10,6 @@ tags={
 	"Gameplay"
 	"Sound"
 }
-name="Bennimog revived"
+name="Bennimog"
 supported_version="1.17.3.0"
 remote_file_id="3611832407"
