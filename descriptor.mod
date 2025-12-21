@@ -1,0 +1,15 @@
+version="1.17"
+picture="thumbnail.png"
+tags={
+	"Balance"
+	"Historical"
+	"Military"
+	"National Focuses"
+	"Technologies"
+	"Map"
+	"Gameplay"
+	"Sound"
+}
+name="Bennimog revived"
+supported_version="1.17.3.0"
+remote_file_id="3611832407"
