@@ -1,0 +1,27 @@
+ideas = {
+country = {
+	
+		
+		
+		SWE_stay_free_trade = {
+			picture = free_trade
+			
+			allowed = {
+			    always = yes
+			}
+
+			allowed_civil_war = {
+				always = yes
+			}
+
+			removal_cost = -1
+			
+			modifier = {
+				trade_laws_cost_factor = 20
+				
+			}
+		}
+		
+		
+	}
+	}

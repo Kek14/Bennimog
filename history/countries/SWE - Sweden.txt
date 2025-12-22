@@ -41,6 +41,8 @@ if = {
 		SWE_severe_lack_of_ammunition
 		#SWE_standardized_equipment
 		SWE_gustaf_v_idea
+		free_trade
+		SWE_stay_free_trade
 	}
 
 
