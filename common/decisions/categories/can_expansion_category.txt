@@ -1,0 +1,6 @@
+can_expansion_category = {
+ icon = generic_political_actions
+
+	allowed = {
+	original_tag = CAN
+	}

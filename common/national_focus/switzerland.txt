@@ -109,7 +109,7 @@
 					NOT = { country_exists = JAP }}
 					add_named_threat = { threat = 12 name = "Marco? Polo!" }
 				news_event = { days = 1 id = mod.1 }
-				NIX = {  	transfer_state = 844
+				PRC = {  	transfer_state = 844
 						transfer_state = 559 
 						transfer_state = 269 
 						transfer_state = 835 

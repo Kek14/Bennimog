@@ -7,24 +7,53 @@ ideas = {
 			picture = ger_mefo_bills_payment
 
 			modifier = {
-				consumer_goods_factor = 0.8
+				consumer_goods_factor = 0.75
 			
 			}
 		}
-			USA_no_asia2 = {
+		USA_no_asia1 = {
+
+			removal_cost = -1 
+			picture = ger_mefo_bills_payment
+
+			modifier = {
+				consumer_goods_factor = 0.50
+			}
+		}
+
+
+		USA_no_asia2 = {
 			removal_cost = -1 
 			picture = generic_local_self_management
 
 			modifier = {
-				industrial_capacity_factory = -0.90
+				industrial_capacity_factory = -0.40
 				industrial_capacity_dockyard = -0.70
-				production_speed_arms_factory_factor = -0.2
+				production_speed_arms_factory_factor = -0.5
 				research_speed_factor = -0.2
+				production_factory_max_efficiency_factor = -0.30
+    					}
+			
+				}
+			
+
+		USA_no_asia3 = {
+			removal_cost = -1 
+			picture = generic_local_self_management
+
+			modifier = {
+				industrial_capacity_factory = -0.20
+				industrial_capacity_dockyard = -0.50
+				production_speed_arms_factory_factor = -0.25
+				research_speed_factor = -0.1
+				production_factory_max_efficiency_factor = -0.15
+    				}
 			
 				
 			}
 
-		}
+		
+
 		great_depression = {
 			picture = usa_great_depression_3
 			

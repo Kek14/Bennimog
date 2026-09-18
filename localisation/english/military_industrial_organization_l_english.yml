@@ -24,8 +24,13 @@ INDUSTRIAL_ORG_OPEN_DETAILS_WINDOW_TOOLTIP: "Open Military Industrial Organizati
 INDUSTRIAL_ORG_OPEN_DETAILS_WINDOW_TOOLTIP_DELAYED: "$NAME|Y$ has $NUMBER|Y0$ Trait points to spend."
 INDUSTRIAL_ORG_LIST_INITIAL_TRAIT_NAME: "$NAME|Y$"
 INDUSTRIAL_ORG_DETAIL_WINDOW_OPEN_QUEUE_BUTTON: "Trait Queue"
+INDUSTRIAL_ORG_DETAIL_WINDOW_SAVE_QUEUE_DESCRIPTION: "§HSave to File§!\nSave this trait queue to file so that you can access it in future playthroughs."
+INDUSTRIAL_ORG_DETAIL_WINDOW_DELETE_QUEUE_DESCRIPTION: "§HDelete Saved Queue§!\nClick to clear the current trait queue and delete the currently selected saved trait queue. If a saved queue is selected, then this will §Rdelete the saved queue permanently§!."
+INDUSTRIAL_ORG_DETAIL_WINDOW_DELETE_SPECIFIC_QUEUE_DESCRIPTION: "§HDelete Saved Queue§!\n§RClick to delete the saved trait queue permanently§!."
+INDUSTRIAL_ORG_DETAIL_WINDOW_IMPORT_FROM_OTHER_MIO_TOOLTIP: "Import valid traits from trait queue for another Military Industrial Organization: $ORG|Y$."
 INDUSTRIAL_ORG_DETAIL_WINDOW_OPEN_QUEUE_BUTTON_WITH_ITEMS: "$INDUSTRIAL_ORG_DETAIL_WINDOW_OPEN_QUEUE_BUTTON$ ($NUMBER_ITEMS$)"
 INDUSTRIAL_ORG_QUEUE_WINDOW_INSTRUCTION: "When this Organization has trait points, the first available trait in this queue will be completed.\n§GShift + Click§! on a trait to §Yadd it to this queue§!.\n§GDrag & Drop§! to §Ychange the queue order§!."
+INDUSTRIAL_ORG_QUEUE_WINDOW_ITEM: "§GCompleted§!"
 INDUSTRIAL_ORG_QUEUE_WINDOW_ITEM_DRAGDROP: "§GDrag & Drop§! to change order in queue"
 INDUSTRIAL_ORG_QUEUE_WINDOW_REMOVE_TOOLTIP: "Remove from Queue"
 INDUSTRIAL_ORG_DETAIL_WINDOW_TRAITS_TAB: "Traits"
@@ -43,12 +48,12 @@ INDUSTRIAL_ORG_DETAIL_WINDOW_HISTORY_ENTRY_FLAVOR_UNITS_PRODUCED: "Units Produce
 INDUSTRIAL_ORG_DETAIL_WINDOW_HISTORY_UPGRADE_VARIANTS_CONFIRM_POPUP_HEADER: "Upgrade with latest trait(s)"
 INDUSTRIAL_ORG_DETAIL_WINDOW_HISTORY_UPGRADE_VARIANTS_CONFIRM_POPUP_DESC: "Are you sure you want to upgrade $EQUIPMENT_NAME|Y$ with latests traits ?\n\nIt will cost $XPCOST|Y$ to upgrade."
 
-INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_PROD_LINE_TOOLTIP: "§GClick§! to §Yassign§! to this production line."
-INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_SHIP_REFIT_TOOLTIP: "§GClick§! to §Yassign§! to ship refit."
-INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_VARIANT_TOOLTIP: "§GClick§! to §Yassign§! to this equipment variant."
-INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_RESEARCH_TOOLTIP: "§GClick§! to §Yassign§! to this technology."
-INDUSTRIAL_ORG_LIST_WINDOW_UNASSIGN_DESIGN_TEAM_TOOLTIP: "§GClick§! to §Runassign§! from this design."
-INDUSTRIAL_ORG_LIST_WINDOW_UNASSIGN_MANUFACTURER_TOOLTIP: "§GClick§! to §Runassign§! from this production line."
+INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_PROD_LINE_TOOLTIP: "§GClick§! to §Yassign§! to this production line"
+INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_SHIP_REFIT_TOOLTIP: "§GClick§! to §Yassign§! to ship refit"
+INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_VARIANT_TOOLTIP: "§GClick§! to §Yassign§! to this equipment variant"
+INDUSTRIAL_ORG_LIST_WINDOW_ASSIGN_TO_RESEARCH_TOOLTIP: "§GClick§! to §Yassign§! to this technology"
+INDUSTRIAL_ORG_LIST_WINDOW_UNASSIGN_DESIGN_TEAM_TOOLTIP: "§GClick§! to §Runassign§! from this design"
+INDUSTRIAL_ORG_LIST_WINDOW_UNASSIGN_MANUFACTURER_TOOLTIP: "§GClick§! to §Runassign§! from this production line"
 
 INDUSTRIAL_ORG_LIST_WINDOW_FILTER_CATEGORY_TANK: "Tanks"
 INDUSTRIAL_ORG_LIST_WINDOW_FILTER_CATEGORY_SHIP: "Ships"
@@ -100,9 +105,9 @@ INDUSTRIAL_ORG_TOOLTIP_HEADER: "§YMilitary Industrial Organization§!"
 INDUSTRIAL_ORG_MANUFACTURER: "Industrial Manufacturer"
 INDUSTRIAL_ORG_DESIGN_TEAM: "Design Team"
 INDUSTRIAL_ORG_MANUFACTURER_TOOLTIP_NAME: "$NAME|H$"
-INDUSTRIAL_ORG_TOOLTIP_CLICK_TO_ASSIGN: "§GClick§! to assign."
-INDUSTRIAL_ORG_TOOLTIP_CLICK_TO_CHANGE: "§GClick§! to change."
-INDUSTRIAL_ORG_TOOLTIP_RIGHT_CLICK_TO_UNASSIGN: "§GRight-Click§! to §Rremove§!."
+INDUSTRIAL_ORG_TOOLTIP_CLICK_TO_ASSIGN: "§GClick§! to assign"
+INDUSTRIAL_ORG_TOOLTIP_CLICK_TO_CHANGE: "§GClick§! to change"
+INDUSTRIAL_ORG_TOOLTIP_RIGHT_CLICK_TO_UNASSIGN: "§GRight-Click§! to §Rremove§!"
 INDUSTRIAL_ORG_TOOLTIP_UPGRADE_ALREADY_ASSIGNED_MIO_HEADER: "§YUpgrade with latest traits§!"
 INDUSTRIAL_ORG_TOOLTIP_UPGRADE_ALREADY_ASSIGNED_MIO: "Update your equipment to have the latest §YDesign Team§! traits applied."
 INDUSTRIAL_ORG_TOOLTIP_UPGRADE_ALREADY_ASSIGNED_MIO_CREATE_VARIANT: "This will create a new variant."
@@ -220,6 +225,42 @@ INDUSTRIAL_ORG_AVAILABLE_MIOS: "$TOTAL|H$"
 INDUSTRIAL_ORG_TOOLTIP_PRODUCTION_TASK_INFO: "Giving a §YMilitary Industrial Organization§! a production line task will apply production bonuses to that line."
 INDUSTRIAL_ORG_TOOLTIP_RESEARCH_TASK_INFO: "Giving a §YMilitary Industrial Organization§! a research task will increase the research speed and may apply equipment specific bonuses."
 
+INDUSTRIAL_ORG_QUEUE_NAME: "Queue:"
+
+INDUSTRIAL_ORG_QUEUE_OVERWRITE: "Overwrite"
+INDUSTRIAL_ORG_QUEUE_RENAME: "Rename"
+INDUSTRIAL_ORG_QUEUE_RENAME_AND_OVERWRITE: "Replace"
+INDUSTRIAL_ORG_QUEUE_SAVE_DESCRIPTION: "Save the current trait queue to file so it can be used in future playthroughs."
+INDUSTRIAL_ORG_QUEUE_SAVE_OVERWRITE_DESC: "Select which trait queue to overwrite, leave empty to create a new saved trait queue:"
+INDUSTRIAL_ORG_QUEUE_SAVE_NAME_DESC: "Enter a (new) name for the trait queue to be saved:"
+INDUSTRIAL_ORG_QUEUE_SAVE_AS: "Save as"
+INDUSTRIAL_ORG_QUEUE_SAVE: "Save"
+INDUSTRIAL_ORG_QUEUE_SAVE_BUTTON_DISABLED_TOOLTIP: "§RThe trait queue needs a non-empty name to be saved.§!"
+
+INDUSTRIAL_ORG_QUEUE_SAVE_BUTTON_ENABLED_TOOLTIP: "§GClick§! to save the trait queue"
+INDUSTRIAL_ORG_QUEUE_SAVE_BUTTON_CREATE_NEW_ENABLED_TOOLTIP: "§GClick§! to save the trait queue \"$SAVED|Y$\" and to create a new trait queue."
+INDUSTRIAL_ORG_QUEUE_DISCARD_BUTTON_TOOLTIP: "§GClick§! to §Rdiscard changes to the current trait queue§! and load trait queue \"$LOAD|Y$\"."
+INDUSTRIAL_ORG_QUEUE_DISCARD_BUTTON_CREATE_NEW_TOOLTIP: "§GClick§! to §Rdiscard changes to the current trait queue§! and create a new trait queue."
+
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_LOAD_TITLE: "Save Trait Queue before loading"
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_LOAD_DESC: "§YYou have unsaved changes that would be lost.§!\n\nDo you want to save or discard the current trait queue \"$SAVED|Y$\" before loading the trait queue \"$LOAD|Y$\"?\n\nIf you don't save, §Rthe changes to the current trait queue will be lost§!."
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_LOAD_SAVE: "Save"
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_LOAD_TOOLTIP: "§GClick§! to save the trait queue \"$SAVED|Y$\" and load trait queue \"$LOAD|Y$\"."
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_LOAD_DISCARD_SAVE: "Discard"
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_CREATE_NEW_DESC: "§YYou have unsaved changes that would be lost.§!\n\nDo you want to save or discard the current trait queue \"$SAVED|Y$\" before creating a new trait queue?\n\nIf you don't save, §Rthe changes to the current trait queue will be lost§!."
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_CREATE_NEW_SAVE: "Save"
+INDUSTRIAL_ORG_QUEUE_SAVE_BEFORE_CREATE_NEW_DISCARD_SAVE: "Discard"
+
+INDUSTRIAL_ORG_QUEUE_LOAD_FROM_SIMILAR_MIO: "Load shared traits from queue for $MIO|Y$"
+INDUSTRIAL_ORG_QUEUE_LOAD_UNKNOWN_MIO: "Unknown Military Industrial Organisation"
+
+INDUSTRIAL_ORG_DELETE_QUEUE_TITLE: "Delete Saved Trait Queue"
+INDUSTRIAL_ORG_DELETE_QUEUE_DESC: "Are you sure you want to delete the saved trait queue $QUEUE|Y$ for MIO $MIO|Y$?\n\nThis will clear the saved traits from the queue and §Rdelete it permanently§!."
+INDUSTRIAL_ORG_DELETE_QUEUE_CONFIRM: "Delete"
+
+INDUSTRIAL_ORG_CLEAR_QUEUE_TITLE: "Clear Trait Queue"
+INDUSTRIAL_ORG_CLEAR_QUEUE_DESC: "Are you sure you want to clear the current trait queue?"
+INDUSTRIAL_ORG_CLEAR_QUEUE_CONFIRM: "Clear"
 
 ###################################################################################################
 #### Content localization
@@ -260,10 +301,13 @@ mio_cat_eq_all_large_plane: "All Large Planes"
 mio_cat_eq_only_light_fighter: "Fighter and Carrier Fighter"
 mio_cat_eq_only_light_fighter_no_cv: "Fighter"
 mio_cat_eq_only_light_fighter_and_CAS_no_cv: "Fighter and CAS"
+mio_cat_eq_only_light_cas: "Close Air Support and Carrier CAS"
+mio_cat_eq_only_light_nav: "Naval Bombers and Carrier NAV"
 mio_cat_eq_only_tactical_bomber: "Tactical Bomber"
 mio_cat_eq_only_strategic_bomber: "Strategic Bomber"
 mio_cat_eq_all_cv_aircraft: "All Carrier Aircraft"
 mio_cat_eq_all_artillery: "All Artillery Equipment"
+mio_cat_eq_only_artillery: "$artillery_equipment$"
 mio_cat_eq_all_infantry_and_support_equipment: "All Infantry and Support Equipment"
 
 
@@ -326,6 +370,11 @@ mio_header_heavy_assault_gun_department: "Heavy Assault Gun Department"
 mio_header_helicopter_construction: "Helicopter Construction"
 mio_header_single_rotor: "Single Rotor"
 mio_header_tandem_rotor: "Tandem Rotor"
+mio_header_aircraft_weapons: "Aircraft Weapons"
+mio_header_light_tank_destroyers_department: "Light Destroyers Department"
+mio_header_medium_tank_destroyers_department: "Medium Destroyers Department"
+mio_header_heavy_tank_destroyers_department: "Heavy Destroyers Department"
+mio_header_tank_production: "Tank Production"
 
 
 
@@ -461,6 +510,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  JAP_tachikawa_aircraft_company_organization: "$tachikawa_aircraft_company$"
  JAP_kawasaki_dockyards_organization: "$kawasaki_dockyards$"
  JAP_isuzu_motors: "Isuzu Motors"
+ JAP_nippon_sharyo_organization: "Nippon Sharyō Seizō Kaisha"
 
  JAP_kawasaki_dockyards_org_name: "Carrier-Focused Raiding Fleet"
 
@@ -608,6 +658,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  FRA_mio_trait_standardized_turrets: "APX Turrets"
  FRA_mio_trait_b1_bis_suspension: "B1 bis Suspension"
  FRA_mio_trait_l_35: "L/35"
+ FRA_mio_trait_scam_facilities: "SACM Facilities"
 
 
 #################
@@ -747,6 +798,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  ITA_breda_organization: "$breda$"
  ITA_brescia_arsenal_organization: "$ITA_brescia_arsenal$"
  ITA_officine_meccaniche_organization: "$ITA_officine_meccaniche$"
+ ITA_ansaldo_train_organization: "$AUS_ansaldo_organization$"
 
 ### TRAITS ###
  ITA_mio_trait_air_race_pedigree: "Air Race Pedigree"
@@ -781,7 +833,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
 #### AUSTRALIA ####
 ###################
 
-### ORGANIZATIONS ###
+### ORGANIZATIONS BASEGAME ###
  AST_cockatoo_doe_organization: "$Cockatoo_doe$"
  AST_evans_deakin_co_organization: "$evans_deakin_co$"
  AST_new_south_wales_rc_organization: "$new_south_wales_rc$"
@@ -789,7 +841,27 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  AST_lithgow_saf_organization: "$lithgow_saf$"
  AST_com_aircraft_corporation_organization: "$AST_commonwealth_aircraft_corporation$"
 
-
+### ORGANIZATIONS Thunder at Our Gates ###
+ AST_new_south_wales_government_railways_organization: "New South Wales Government Railways"
+ AST_vulcan_foundry_organization: "Vulcan Foundry"
+ AST_nuffield_mechanizations_and_aero_organization: "Nuffield Mechanizations and Aero"
+ AST_american_car_and_foundry_organization: "American Car and Foundry"
+ AST_commonwealth_aircraft_corporation_organization: "Commonwealth Aircraft Corporation"
+ AST_government_aircraft_factories_organization: "Government Aircraft Factories"
+ AST_de_havilland_australia_organization: "de Havilland Australia"
+ AST_gloster_aircraft_organization: "Gloster Aircraft"
+ AST_lockheed_organization: "Lockheed"
+ AST_curtiss-wright_organization: "Curtiss-Wright"
+ AST_lithgow_arms_organization: "Lithgow Arms"
+ AST_lysaght_organization: "Lysaght"
+ AST_holden_organization: "Holden"
+ AST_ford_australia_organization: "Ford Australia"
+ AST_vickers-ruwolt_organization: "Vickers-Ruwolt"
+ AST_evan_deakin_and_company_organization: "Evans Deakin & Company"
+ AST_morts_dock_organization: "Mort's Dock"
+ AST_cockatoo_docks_organization: "Cockatoo Docks"
+ AST_john_brown_and_company_organization: "John Brown & Company"
+ 
 #####################
 #### BRITISH RAJ ####
 #####################
@@ -879,10 +951,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  CZE_avia_organization: "$CZE_avia$"
  CZE_aero_organization: "$CZE_aero$"
  CZE_letov_organization: "$CZE_letov$"
-
-### CZECHOSLOVAKIAN TRAITS ###
- CZE_mio_trait_skoda_works: "$CZE_skoda_works$"
-
+ CZE_praga_aviation_organization: "$CZE_praga$ Aviation"
 
 #################
 #### HUNGARY ####
@@ -996,6 +1065,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  CHI_camco_medium_organization:  "$CHI_camco_1$"
  CHI_camco_fighter_organization: "$CHI_camco_2$"
  CHI_camco_bomber_organization: "$CHI_camco_3$"
+ CHI_ncns_sino_german_technical_mission_organization: "$german_chinese_tank_designer$"
 
 ### CHINESE TRAITS ###
  CHI_mio_trait_chinese_panzer_armor: "Chinese Panzer Armor"
@@ -1492,6 +1562,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  BEL_minerva_imperia_armored_car_organization: "Minerva-Imperia Armoured Cars"
  BEL_minerva_imperia_motorized_organization: "Minerva-Imperia Automobiles"
  BEL_laboratoire_aerotechnique_de_belgique_organization: "Laboratoire Aérotechnique de Belgique"
+ BEL_ateliers_metallurgiques_tubize_organization: "Ateliers Métallurgiques-Tubize"
  
  
  #BELGIUM - MIO Traits
@@ -1639,6 +1710,219 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  PHI_mio_trait_widened_tires: "Widened Tires"
  PHI_mio_trait_improvised_bombs: "Improvised Bombs"
  PHI_mio_trait_engine_filters: "Engine Filters"
+
+ ### Indonesia MIOs ###
+ INS_nsm_amsterdam_name_nationalized: "NSM Jakarta"
+ INS_nsm_amsterdam_name_normal: "NSM Amsterdam"
+ INS_nsm_amsterdam_organization: "[INS_nsm_amsterdam_name]"
+ nsm_amsterdam_ins: "[INS_nsm_amsterdam_name]"
+
+ INS_marine_establishment_organization: "Marine Establishment"
+ marine_establishment_ins: "Marine Establishment"
+
+ INS_fokker_name_normal: "Fokker"
+ INS_fokker_name_nationalized: "IPT Nusantara"
+ INS_fokker_organization: "[INS_fokker_name]"
+ fokker_ins: "[INS_fokker_name]"
+
+ INS_knilm_name_normal: "KNILM"
+ INS_knilm_name_nationalized: "Garuda Indonesia"
+ INS_knilm_organization: "[INS_knilm_name]"
+ knilm: "[INS_knilm_name]"
+
+ INS_artillerie_inrichtingen_name_normal: "Artillerie Inrichtingen"
+ INS_artillerie_inrichtingen_name_nationalized: "Industri Persenjataan Negara"
+ INS_artillerie_inrichtingen_organization: "[INS_artillerie_inrichtingen_name]"
+ artillerie_inrichtingen_ins: "[INS_artillerie_inrichtingen_name]"
+
+ INS_artillerie_inrichtingen_pyrotechnische_name_normal: "AI Pyrotechnische"
+ INS_artillerie_inrichtingen_pyrotechnische_name_nationalized: "Industri Persenjataan Amunisi"
+ INS_artillerie_inrichtingen_pyrotechnische_organization: "[INS_artillerie_inrichtingen_pyrotechnische_name]"
+ artillerie_inrichtingen_pyrotechnische: "[INS_artillerie_inrichtingen_pyrotechnische_name]"
+
+ INS_bio_pharma_name_normal: "Landskoepok–Pasteur"
+ INS_bio_pharma_name_nationalized: "Bio Farma"
+ INS_bio_pharma_organization: "[INS_bio_pharma_name]"
+ bio_pharma: "[INS_bio_pharma_name]"
+
+ INS_machinefabriek_braat_name_normal: "N.V. Machinefabriek Braat"
+ INS_machinefabriek_braat_name_nationalized: "Pabrik Mesin Surabaya"
+ INS_machinefabriek_braat_organization: "[INS_machinefabriek_braat_name]"
+ machinefabriek_braat: "[INS_machinefabriek_braat_name]"
+
+ ### Australia MIOs ###
+ AST_mio_trait_lee_enfield_no1_mark3: "$AST_lee_enfield_no1_mark3$"
+ AST_mio_trait_owen_gun: "$AST_owen_gun$"
+ AST_mio_trait_better_ammo_supply: "Better Ammunition Supplies"
+ AST_mio_trait_yeramba_engineering: "Yeramba Engineering"
+ AST_mio_trait_anti_tank_improvements: "Anti Tank Improvements"
+ AST_mio_trait_commonwealth_exports: "Commonwealth Exports"
+ AST_mio_trait_defensive_emplacements: "Defensive Emplacements"
+ AST_mio_trait_utility_conversions: "Utility Conversions"
+ AST_mio_trait_all_australian_drive: "All-Australian Drive"
+ AST_mio_trait_bush_modifications: "Bush Modifications"
+ AST_mio_trait_light_vehicle_standardization: "Light Vehicle Standardization"
+ AST_mio_trait_corrugated_iron_ingenuity: "Corrugated Iron Ingenuity"
+ AST_mio_trait_integrated_steelworks: "Integrated Steelworks"
+ AST_mio_trait_mosquito_local_production: "Mosquito Local Production"
+ AST_mio_trait_timber_frame_mastery: "Timber Frame Mastery"
+ AST_mio_trait_high_altitude_calibration: "High-Altitude Calibration"
+ AST_mio_trait_nationalised_production_standards: "Nationalised Production Standards"
+ AST_mio_trait_trainer_to_combat_pipeline: "Trainer-to-Combat Pipeline"
+ AST_mio_trait_commonwealth_procurement_office: "Commonwealth Procurement Office"
+ AST_mio_trait_boomerang_spirit: "Boomerang Spirit"
+ AST_mio_trait_indigenous_airframe_design: "Indigenous Airframe Design"
+ AST_mio_trait_wirraway_versatility: "Wirraway Versatility"
+ AST_mio_trait_raf_doctrine_integration: "RAF Doctrine Integration"
+ AST_mio_trait_gladiator_lessons_learned: "Gladiator Lessons Learned"
+ AST_mio_trait_jet_transition_pathway: "Jet Transition Pathway"
+ AST_mio_trait_kittyhawk_reliability_programme: "Kittyhawk Reliability Programme"
+ AST_mio_trait_cross_pacific_logistics: "Cross-Pacific Logistics"
+ AST_mio_trait_dive_bombing_refinement: "Dive Bombing Refinement"
+ AST_mio_trait_hudson_coastal_patrol: "Hudson Coastal Patrol"
+ AST_mio_trait_pacific_overwater_endurance: "Pacific Overwater Endurance"
+ AST_mio_trait_ventura_strike_packages: "Ventura Strike Packages"
+ AST_mio_trait_evans_deakin_coral_sea_hunters: "Coral Sea Hunters"
+ AST_mio_trait_evans_deakin_pacific_raider_refit: "Pacific Raider Refit"
+ AST_mio_trait_evans_deakin_lightweight_hull_construction: "Lightweight Hull Construction"
+ AST_mio_trait_morts_dock_convoy_protection_protocols: "Convoy Protection Protocols"
+ AST_mio_trait_morts_dock_sydney_harbour_defenders: "Sydney Harbour Defenders"
+ AST_mio_trait_morts_dock_endurance_refit_standards: "Endurance Refit Standards"
+ AST_mio_trait_cockatoo_docks_battle_damage_overhaul: "Battle Damage Overhaul"
+ AST_mio_trait_cockatoo_docks_allied_fleet_servicing: "Allied Fleet Servicing"
+ AST_mio_trait_cockatoo_docks_drydock_capacity_expansion: "Drydock Capacity Expansion"
+ AST_mio_trait_john_brown_clyde_built_standard: "Clyde-Built Standard"
+ AST_mio_trait_john_brown_capital_ship_heritage: "Capital Ship Heritage"
+ AST_mio_trait_john_brown_wartime_surge_capacity: "Wartime Surge Capacity"
+ AST_mio_trait_nuffield_liberty_engine_refinement: "Liberty Engine Refinement"
+ AST_mio_trait_nuffield_cruiser_tank_lineage: "Cruiser Tank Lineage"
+ AST_mio_trait_nuffield_pursuit_doctrine_optimisation: "Pursuit Doctrine Optimisation"
+ AST_mio_trait_vulcan_matilda_pacific: "Matilda Pacific"
+ AST_mio_trait_vulcan_jungle_assault_modifications: "Jungle Assault Modifications"
+ AST_mio_trait_vulcan_slow_and_steady_resilience: "Slow and Steady Resilience"
+ AST_mio_trait_nswgr_sentinel_casting_programme: "Sentinel Casting Programme"
+ AST_mio_trait_nswgr_railway_foundry_capacity: "Railway Foundry Capacity"
+ AST_mio_trait_nswgr_progressive_up_armouring: "Progressive Up-Armouring"
+ AST_mio_trait_acf_production_pipeline: "Production Pipeline"
+ AST_mio_trait_acf_lend_lease_integration: "Lend-Lease Integration"
+ AST_mio_trait_acf_arsenal_of_the_pacific: "Arsenal of the Pacific"
+
+
+ ## SIAM ###
+ SIA_army_ordnance_department_organzation: "Army Ordnance Light Weaponry Department"
+ SIA_army_ordnance_department_artillery_organzation: "Army Ordnance Artillery Department"
+ SIA_thai_rung_organization: "Thai Rung"
+ SIA_directorate_of_aeronautical_engineering: "Directorate of Aeronautical Engineering"
+ SIA_chaiseri_organization: "Chaiseri"
+ SIA_bangkok_dock_organization: "Bangkok Dock"
+
+
+########################################################################    
+
+  ##     ## ##     ## ##    ## ####  ######  ##     ##
+  ###   ### ##     ## ###   ##  ##  ##    ## ##     ##
+  #### #### ##     ## ####  ##  ##  ##       ##     ## 
+  ## ### ## ##     ## ## ## ##  ##  ##       #########
+  ##     ## ##     ## ##  ####  ##  ##       ##     ##
+  ##     ## ##     ## ##   ###  ##  ##    ## ##     ##
+  ##     ##  #######  ##    ## ####  ######  ##     ##
+
+ ##########################
+ #######    PFOT    #######
+ ##########################
+
+ #CZECHOSLOVAKIA - Organizations
+ CZE_zbrojovka_vsetin_organization: "Zbrojovka-Vsetín"
+ CZE_benees_mraz_organization: "Beneš-Mráz"
+ CZE_zlin_aircraft_organization: "Zlín Aircraft"
+ CZE_CKD_plzen_organization: "CKD-Plzen"
+ CZE_ceska_zbrojovka_uhersky_brod_organization: "CZ Uherský Brod"
+ CZE_ringhoffer_tatra_organization: "Ringhoffer-Tatra"
+ CZE_skoda_plzen_tank_destroyer_organization: "Škoda Armor-Plzen"
+
+ #OTHER TAGS - Organizations
+ CZE_skoda_works_german_organization: "$CZE_skoda_works$-Prague"
+ CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization: "Böhmische-Mährische Maschinenfabrik AG"
+ GER_henschel_kassel_organization: "Henschel-Kassel"
+ ENG_crewe_works_organization: "Crewe Works"
+ USA_baldwin_locomotive_works_organization: "Baldwin Locomotive Works"
+ FRA_alsthom_organization: "Alsthom"
+ SOV_kolomna_locomotive_plant_name_dynamic: "[SOV_kolomna_locomotive_plant_name_dynamic]"
+ SOV_kolomna_locomotive_plant_communist: "V.V. Kuybyshev Locomotive Factory"
+ SOV_kolomna_locomotive_plant_default: "Kolomna Locomotive Works"
+
+ #CZECHOSLOVAKIA - MIO Traits
+ CZE_mio_trait_skoda_works: "$CZE_skoda_works$"
+ CZE_mio_trait_walter_co_name: "$CZE_walter_co$ Engines"
+ CZE_bata_corporation_name: "$CZE_bata_corporation$ Facilities"
+ CZE_mio_trait_walter_co_taken_flag: " $GER_hoesch_facilities_trait_taken_flag$"
+ CZE_mio_trait_bata_corporation_taken_flag: " $GER_hoesch_facilities_trait_taken_flag$"
+
+ #OTHER TAGS - MIO Traits
+ CZE_mio_trait_gun_smuggling_difficulties: "Weapon Smuggling Difficulties"
+ CZE_mio_trait_panzer_38t_chassis_conversion: "Panzer 38(t) Chassis Conversion"
+ CZE_mio_trait_messerschmitt_integration: "Integration into Messerschmitt's Production Lines"
+ CZE_mio_trait_walter_co_german_taken_flag: "  $GER_hoesch_facilities_trait_taken_flag$"
+ GER_mio_trait_lokomotivfabrik_floridsdorf: "Lokomotivfabrik Floridsdorf Facilities"
+ generic_mio_trait_compulsory_tank_designer: "Compelled Tank Manufacturer"
+ generic_mio_trait_off_the_board_designs: "Off the Board Designs"
+ generic_mio_trait_armor_improvements: "Armor Improvements"
+ generic_mio_trait_cruiser_tank_production: "Cruiser tank Production"
+ generic_mio_trait_additional_anti_aircraft_machine_guns: "Additional Anti-Aircraft Machine Guns"
+ ENG_mio_trait_lms_logistical_expertise: "LMS Railway Logistical Expertise"
+ CZE_mio_trait_minimalist_wagon_design: "Minimalist Wagon Design"
+ ENG_mio_trait_lms_class_stanier_class_5_black_five: "LMS Black Fives"
+ ENG_mio_trait_vickers_armstrong_knowledge_sharing: "$ENG_vickers_armstrong_eng_organization$ Knowledge Sharing"
+ CZE_mio_trait_scam_facilities: "Mulhouse Plant"
+
+ #SLOVAKIA - Organizations
+ SLO_povazska_bystrica_organization: "Škoda-Považská Bystrica"
+ SLO_CZE_skoda_artillery_organization: "Škoda-Dubnica nad Váhom"
+ SLO_zbrojnica_roth_organization: "Zbrojnica Roth"
+ SLO_generic_escort_ship_organization: "Prístav Bratislava"
+ SLO_CZE_letov_organization: "Letov-Bratislava"
+ SLO_generic_general_aircraft_organization: "Považské strojárne"
+ SLO_svit_organization: "Svit"
+ SLO_CZE_skoda_armor_organization: "Škoda-Dubnica nad Váhom"
+ SLO_CZE_skoda_plzen_tank_destroyer_organization: "Závody ťažkého strojárstva"
+
+ ###################################
+ #### AUTOMATIC WEAPON DESIGNER ####
+ ###################################
+ CZE_mio_initial_trait_automatic_manufacturer: "Automatic Weapons Manufacturer"
+ CZE_mio_trait_drum_mags: "Drum Mags"
+ CZE_mio_trait_box_mags: "Box Mags"
+ CZE_mio_trait_9_mm: "9mm Calibers"
+ CZE_mio_trait_larger_calibers: "45mm Calibers"
+ CZE_mio_trait_maintain_current_firing_mechanism: "Keep Current Firing Mechanism Designs"
+ CZE_mio_trait_simplified_firing_mechanisms: "Simplified Firing Mechanism"
+ CZE_mio_trait_reduce_use_of_wooden_parts: "Reduce use of Wooden Housing"
+ CZE_mio_trait_stamp_steel_components: "Stamp Steel Construction"
+ CZE_mio_trait_anti_tank_rifles: "Anti Tank Rifles"
+ CZE_mio_trait_simplified_barrel_forging: "Simplified Barrel Forging "
+ 
+
+ ###################################
+ ####  Tank Destroyer Designer  ####
+ ###################################
+ CZE_tank_destroyer_organization: "Tank Destroyer Manufacturer"
+ CZE_mio_trait_initial_trait_tank_destroyer_guns_organization: "Tank Destroyer Designer"
+ CZE_mio_trait_mobile_tank_destroyers: "Hit and Run Destroyers"
+ CZE_mio_trait_multi_purpose_ammunition_tank_destoryer: "Multi-Purpose Ammunition"
+ CZE_mio_trait_light_tank_destroyer_artillery_gun_combo: "Artillery Gun Combo"
+ CZE_mio_trait_light_tank_destroyer_gun_improved_muzzle_breaks: "Improved Muzzle Breaks"
+ CZE_mio_trait_medium_tank_hunters_tank_destoryer: "Mobile Tank Hunters"
+ CZE_mio_trait_low_profile_ambushers_tank_destoryer: "Low Profile Ambushers"
+ CZE_mio_trait_armor_reinforced_sloped_armor_tank_destroyer: "Reinforced Sloped Armor"
+ CZE_mio_trait_rear_and_low_ammo_compartment_tank_destroyer: "Rear and Low Ammo Compartment"
+ CZE_mio_trait_medium_tank_destroyer_gun_high_velocity_rounds: "High-Velocity Rounds"
+ CZE_mio_trait_medium_tank_destroyer_extended_barrel_length: "Extended Barrel Length"
+ CZE_mio_trait_heavy_mobile_siege_cannons: "Mobile Siege Guns"
+ CZE_mio_trait_improved_barrel_cooling: "Improved Barrel Cooling"
+ CZE_mio_minimalist_gun_designs: "Minimalistic Gun Designs"
+ CZE_mio_trait_additional_ammo_storage: "Additional Ammo Storage"
+ CZE_mio_trait_easier_gun_maintance: "Easier Gun Maintenance"
+ CZE_mio_trait_cannon_improvements: "Cannon Improvements"
 
 
 ########################################################################                                                 
@@ -1947,7 +2231,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  generic_mio_trait_foam_fire_extinguishers: "Foam Fire Extinguishers"
  generic_mio_trait_bulkhead_shoring_procedure: "Bulkhead Shoring Procedure"
  generic_mio_trait_high_powered_steering: "High Powered Steering"
- generic_mio_trait_flooding_boundries: "Flooding Boundries"
+ generic_mio_trait_flooding_boundries: "Flooding Boundaries"
  generic_mio_trait_protected_pumps: "Protected Pumps"
  generic_mio_trait_advanced_scanners: "Advanced Scanners"
  generic_mio_trait_capital_destroyer_shells: "Capital Destroyer Shells"
@@ -2050,7 +2334,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
 ###################################
 #### CAS AIRCRAFT MANUFACTURER ####
 ###################################
- generic_cas_aircraft_organization: "CAS Aircarft Manufacturer"
+ generic_cas_aircraft_organization: "CAS Aircraft Manufacturer"
  generic_mio_initial_trait_cas_aircraft_designer: "CAS Aircraft Designer"
  generic_mio_trait_selectional_construction: "Selectional Construction"
  generic_mio_trait_low_altitude_attacks: "Low Altitude Attacks"
@@ -2076,7 +2360,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  generic_mio_trait_navigation_equipment: "Navigation Equipment"
  generic_mio_trait_patrol_fuel_tanks: "Patrol Fuel Tanks"
  generic_mio_trait_internal_torpedo_mountings: "Internal Torpedo Mountings"
- generic_mio_trait_high_speed_torpedo_release: "High-Speed Torpedo Relase"
+ generic_mio_trait_high_speed_torpedo_release: "High-Speed Torpedo Release"
  generic_mio_trait_reinforced_fuselage: "Reinforced Fuselage"
  generic_mio_agility_wing_design: "Agility Wing Design"
  generic_mio_strength_wing_design: "Strength Wing Design"
@@ -2173,7 +2457,7 @@ USA_mio_trait_dedicated_tank_factory: "Dedicated Tank Factory"
  generic_mio_trait_improved_direct_fire_targeting: "Improved Direct Fire Targeting"
  generic_mio_trait_advanced_anti_air_targeting: "Advanced Anti-Air Targeting"
  generic_mio_trait_advanced_trajectory_calculations: "Advanced Trajectory Calculations"
- generic_mio_trait_sliding_breech_block: "Sliding Beach Block"
+ generic_mio_trait_sliding_breech_block: "Sliding Breech Block"
  generic_mio_trait_rapid_fire: "Rapid Fire"
  generic_mio_trait_advanced_barrel_forging: "Advanced Barrel Forging" #ALSO FOR INFANTRY WEAPONS
  generic_mio_trait_big_guns: "Big Guns"
@@ -2271,6 +2555,25 @@ generic_mio_trait_extra_seating: "Extra Seating"
 generic_mio_trait_co_axial_rotors: "Co-Axial Rotors"
 generic_mio_trait_mass_production_certification: "Mass Production Certification"
 
+############################
+#### TRAIN MANUFACTURER #### #marijn211: PfoT CCP addition
+############################
+ generic_mio_initial_trait_generic_train_manufacturer: "Train Manufacturer"
+ generic_mio_trait_material_improvements: "Material Improvements"
+ generic_mio_trait_joint_stock_scheme: "Joint Stock Schemes"
+ generic_rapid_production_upscaling: "Rapid Production Upscaling"
+ generic_mio_trait_additional_flak_wagons: "Additional Flak Wagons"
+ generic_mio_trait_improved_axle_fitting: "Improved Axle Fitting"
+ generic_mio_trait_improved_wagon_design: "Improved Wagon Design"
+ generic_mio_trait_improved_loading: "Improved Loading Methods"
+ generic_mio_trait_ugly_ducklings: "Ugly Ducklings"
+ generic_mio_trait_armor_plating: "Armor Plating"
+ generic_mio_trait_simplified_rail_carrier: "Simplified Rail Carrier"
+ generic_mio_trait_improved_barrel_lining: "Improved Barrel Lining"
+ generic_mio_trait_quick_design_turnarounds: "Quick Design Turnarounds"
+ generic_mio_trait_salavage_destoryed_locomotives: "Salvage Destroyed Locomotives"
+ generic_mio_trait_train_production_at_scale: "Production at Scale"
+ generic_mio_trait_machine_assembly: "Machine Assembly"
 
 ########### DEBUG #############
 

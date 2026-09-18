@@ -1550,20 +1550,8 @@
 
 
 		completion_reward = {
-			IF = {
-				limit = {
-					NOT = {
-						has_idea = MAN_mobilization
-					}
-				}
-				add_ideas = MAN_strengthen_army
-			}
-			ELSE = {
-				swap_ideas = {
-					remove_idea = MAN_mobilization
-					add_idea = MAN_strong_army
-				}
-			}
+		add_mastery = {
+		amount = 200}			
 		}
 
 	}

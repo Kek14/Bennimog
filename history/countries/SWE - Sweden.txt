@@ -43,6 +43,7 @@ if = {
 		SWE_gustaf_v_idea
 		free_trade
 		SWE_stay_free_trade
+		neutrality_idea
 	}
 
 

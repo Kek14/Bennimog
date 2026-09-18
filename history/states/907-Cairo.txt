@@ -4,8 +4,12 @@ state={
 	manpower = 6454865
 	state_category=town
 
+	resources = {
+	rubber = 200
+}
 	history={
 		owner = ENG
+		add_core_of = UKR
 		buildings = {
 			infrastructure = 3
 			industrial_complex = 1

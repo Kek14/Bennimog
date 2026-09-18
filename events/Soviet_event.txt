@@ -1,0 +1,23 @@
+add_namespace = music_event
+
+country_event = {
+    id = music_event.1
+    title = music_event.1.t
+    desc = music_event.1.d
+    picture = GFX_report_event_generic
+    	is_triggered_only = yes
+
+	trigger = {
+        always = yes
+    }
+    immediate = {    
+ every_country = {
+            limit = { is_human = yes }
+            play_song = "comintern_war_1"
+        }
+    }
+}
+	option = {
+    name = "OK"
+}
+}

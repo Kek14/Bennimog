@@ -54,6 +54,11 @@ news_event = {
 		add_political_power = -100
 		add_war_support = 0.1
 		army_experience = 100
+		add_mastery =  {
+			  	amount = 200
+				
+				}
+
 	}
 
 	mean_time_to_happen = {

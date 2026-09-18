@@ -1,0 +1,7 @@
+on_war = {
+    trigger = {
+        attacker = GER
+        defender = SOV
+    }
+    events = { custom_music.1 }
+}

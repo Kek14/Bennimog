@@ -1,0 +1,20 @@
+sov_music_category = {
+
+sov_music_decision = {
+    icon = generic_decision
+    allowed = {
+        tag = SOV 
+    }
+    available = {
+        has_war_with = GER
+    }
+    visible = {
+        always = yes
+    }
+    remove_after_taken = yes
+
+    complete_effect = {
+                country_event = { id = music_event.1 }
+    		}
+	}
+}

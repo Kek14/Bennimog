@@ -68,7 +68,7 @@ focus_tree = {
 		x = 3
 		y = 0
 
-		cost = 10
+		cost = 1
 
 		ai_will_do = {
 			factor = 9
@@ -554,7 +554,7 @@ focus_tree = {
 			limit = {has_game_rule = {rule = No_Asia_game_rule option = NO_ASIA_JA}
              }
 			 USA = {
-					remove_ideas = USA_no_asia
+					
 				}
 				}
 		}
@@ -1059,7 +1059,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ROM_civil_works
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -1191,10 +1191,10 @@ focus_tree = {
 				limit = {
 					has_state_flag = ROM_malaxa_IC
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -1211,10 +1211,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 				set_state_flag = ROM_malaxa_IC
@@ -1289,7 +1289,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 				add_resource = {
@@ -1313,7 +1313,7 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 6
 				add_building_construction = {
 					type = industrial_complex
-					level = 3
+					level = 6
 					instant_build = yes
 				}
 				set_state_flag = ROM_hunedoara_steel_works_IC
@@ -1356,10 +1356,10 @@ focus_tree = {
 				limit = {
 					has_state_flag = ROM_invest_in_the_iar_AF1
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 			}
@@ -1376,10 +1376,10 @@ focus_tree = {
 						include_locked = yes
 					}
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 4
 				add_building_construction = {
 					type = arms_factory
-					level = 3
+					level = 4
 					instant_build = yes
 				}
 				set_state_flag = ROM_invest_in_the_iar_AF1
@@ -2140,7 +2140,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ROM_institute_royal_dictatorship
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2487,7 +2487,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ROM_flexible_foreign_policy
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2662,7 +2662,7 @@ focus_tree = {
 		relative_position_id = ROM_appoint_german_friendly_government
 		mutually_exclusive = { focus = ROM_national_christian_party }
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2728,7 +2728,7 @@ focus_tree = {
 		relative_position_id = ROM_appoint_german_friendly_government
 		mutually_exclusive = { focus = ROM_iron_guard }
 		
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -2798,7 +2798,7 @@ focus_tree = {
 		y = 2
 		relative_position_id = ROM_appoint_soviet_friendly_government
 
-		cost = 15
+		cost = 10
 
 		ai_will_do = {
 			factor = 9
@@ -3827,7 +3827,7 @@ focus_tree = {
 		x = 34
 		y = 0
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 9
@@ -3847,6 +3847,9 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 50
+			add_mastery = {
+			amount = 100
+			track = armor}
 		}
 	}
 
@@ -3858,7 +3861,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ROM_army_maneuvers
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 1
@@ -3877,6 +3880,14 @@ focus_tree = {
 		available_if_capitulated = no
 
 		completion_reward = {
+			add_breakthrough_progress = {
+				specialization = specialization_land
+				value = 1
+			}
+
+			add_mastery = {
+			amount = 100
+			track = armor}
 			add_ideas = ROM_army_war_college
 			custom_effect_tooltip = ROM_war_college_tt
 			hidden_effect = {
@@ -4204,7 +4215,7 @@ focus_tree = {
 		y = 1
 		relative_position_id = ROM_royal_guards_divisions
 
-		cost = 10
+		cost = 5
 
 		ai_will_do = {
 			factor = 5

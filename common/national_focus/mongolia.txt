@@ -569,10 +569,10 @@
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -601,10 +601,10 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -631,10 +631,10 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -819,7 +819,7 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			617 = {
+			817 = {
 			 add_resource = {
                     type = tungsten
                     amount = 10
@@ -851,19 +851,19 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			618 = {
+			817 = {
 			 add_resource = {
                     type = chromium
                     amount = 7
                 }
 			}
-			619 = {
+			817 = {
 			 add_resource = {
                     type = steel
                     amount = 11
                 }
 			}
-			619 = {
+			817 = {
 			 add_resource = {
                     type = aluminium
                     amount = 2
@@ -889,7 +889,7 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			617 = {
+			817 = {
 			 add_resource = {
                     type = tungsten
                     amount = 8
@@ -925,7 +925,7 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-			330 = {
+			817 = {
 			 add_resource = {
                     type = steel
                     amount = 17
@@ -1380,7 +1380,7 @@
 					level = 1
 					instant_build = yes
 					province = {
-						id = 12526
+						id = 10627
 					}
 				}
 			}
@@ -1412,10 +1412,10 @@
 		available_if_capitulated = yes
 
 		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
+			add_extra_state_shared_building_slots = 2
 			add_building_construction = {
 				type = industrial_complex
-				level = 1
+				level = 2
 				instant_build = yes
 			}
 		}
@@ -1444,10 +1444,10 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1474,10 +1474,10 @@
 						}
 					}
 				}
-				add_extra_state_shared_building_slots = 1
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
-					level = 1
+					level = 2
 					instant_build = yes
 				}
 			}
@@ -1918,7 +1918,10 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
-		swap_ideas = {
+			add_mastery = {
+			amount = 100
+			track = armor}
+			swap_ideas = {
 			remove_idea = mon_backward_military_structure
 			add_idea = mon_backward_military_structure_1
 			}
@@ -2004,6 +2007,9 @@
 		available_if_capitulated = yes
 
 		completion_reward = {
+		add_mastery = {
+		amount = 100
+		track = armor}
 		add_research_slot = 1
 		}
 	}

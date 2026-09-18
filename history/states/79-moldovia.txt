@@ -8,7 +8,7 @@ state=
 		coal = 1 # initial distribution
 	}
 
-	state_category = rural
+	state_category = city
 	
 	history=
 	{

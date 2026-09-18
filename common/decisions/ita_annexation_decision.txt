@@ -1,0 +1,26 @@
+ita_expansion_category = {
+
+    annex_bul_decision = {
+        cost = 0
+
+
+        fire_only_once = yes
+        available = {
+
+             BUL = {
+		is_ai = yes}
+        }
+
+
+        complete_effect = {
+            	BUL = {
+			every_owned_state = {
+			add_core_of = ITA
+				}
+		ITA = {
+
+            annex_country = { target = BUL transfer_troops = yes }
+            
+
+            }
+        }
