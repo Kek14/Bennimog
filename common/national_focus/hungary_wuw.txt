@@ -8009,12 +8009,7 @@ focus_tree = {
 		}
 
 		bypass = {
-			AND = {
-				wuw_HUN_does_not_have_trianon = yes
-				NOT = {
-					has_idea = HUN_bled_agreement_wuw
-				}
-			}
+			has_idea = HUN_treaty_of_triannon_3
 		}
 
 		cancel_if_invalid = no
@@ -8026,12 +8021,12 @@ focus_tree = {
 		completion_reward = {
 
 			add_threat = 1
-
-		remove_ideas = HUN_treaty_of_triannon_aat_wuw
-		remove_ideas = HUN_treaty_of_triannon_3
-		remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff
-		remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_air_debuff
-		remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff
+			HUN_remove_trianon_effect = yes
+			#remove_ideas = HUN_treaty_of_triannon_aat_wuw
+			#remove_ideas = HUN_treaty_of_triannon_3
+			#remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_army_exp_debuff
+			#remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_air_debuff
+			#remove_ideas = HUN_treaty_of_triannon_aat_wuw_no_air_or_army_debuff
 
 
 
@@ -10359,7 +10354,7 @@ focus_tree = {
 		id = wuw_HUN_renew_the_rome_protocols
 		icon = GFX_focus_befriend_italy
 		prerequisite = { focus = wuw_HUN_license_fiat_tankettes }
-		mutually_exclusive = { focus = wuw_HUN_invite_german_investors }
+		
 		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_license_fiat_tankettes
@@ -10440,15 +10435,7 @@ focus_tree = {
 				reverse_add_opinion_modifier = { target = ITA modifier = HUN_renew_the_rome_protocols }
 				add_opinion_modifier = { target = ITA modifier = HUN_renew_the_rome_protocols }
 			}
-			IF = {
-				limit = {
-					has_country_leader = {
-						ruling_only = yes
-						character = HUN_miklos_horthy
-					}
-				}
-				news_event = { id = news.312 }
-			}
+
 
 		}
 	}
@@ -10457,7 +10444,7 @@ focus_tree = {
 		id = wuw_HUN_invite_german_investors
 		icon = GFX_focus_chi_mission_to_germany
 		prerequisite = { focus = wuw_HUN_seek_german_contracts }
-		mutually_exclusive = { focus = wuw_HUN_renew_the_rome_protocols }
+		
 		x = 0
 		y = 1
 		relative_position_id = wuw_HUN_seek_german_contracts
@@ -10669,182 +10656,9 @@ focus_tree = {
 		}
 	}
 
-	focus = {
-		id = wuw_HUN_protect_austria
-		icon = GFX_focus_AUS_for_a_better_future
-		prerequisite = { focus = wuw_HUN_renew_the_rome_protocols }
-		#mutually_exclusive = { focus = wuw_HUN_renew_the_rome_protocols }
-		x = 0
-		y = 1
-		relative_position_id = wuw_HUN_renew_the_rome_protocols
 
-		cost = 5
 
-		ai_will_do = {
-			factor = 20
-		}
 
-		available = {
-			is_subject = no
-			975 = {
-				is_owned_by = AUS
-			}
-			AUS = {
-				NOT = {
-					OR = {
-						is_guaranteed_by = ROOT
-						has_government = communism
-					}
-				}
-			}
-		}
-
-		bypass = {
-			OR = {
-				AND = {
-					975 = {
-						NOT = { is_owned_by = AUS }
-					}
-					4 = {
-						NOT = { is_owned_by = AUS }
-					}
-					152 = {
-						NOT = { is_owned_by = AUS }
-					}
-					153 = {
-						NOT = { is_owned_by = AUS }
-					}
-					848 = {
-						NOT = { is_owned_by = AUS }
-					}
-					976 = {
-						NOT = { is_owned_by = AUS }
-					}
-				}
-				AUS = {
-					is_guaranteed_by = ROOT
-				}
-			}
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_ANNEXATION }
-
-		completion_reward = {
-
-			AUS = {
-				country_event = {
-					id = WW_hungary.8
-					days = 2
-					random_days = 3
-				}
-			}
-
-		}
-	}
-
-	focus = {
-		id = wuw_HUN_an_alliance_with_italy
-		icon = GFX_goal_generic_major_alliance
-		prerequisite = { focus = wuw_HUN_protect_austria }
-		#mutually_exclusive = { focus = wuw_HUN_renew_the_rome_protocols }
-		x = 0
-		y = 1
-		relative_position_id = wuw_HUN_protect_austria
-
-		cost = 5
-
-		ai_will_do = {
-			factor = 15
-		}
-
-		available = {
-			NOT = { has_war_with = ITA }
-			is_subject = no
-			is_in_faction = no
-			ITA = {
-				OR = {
-					is_in_faction = no
-					is_faction_leader = yes
-				}
-				is_subject = no
-				ITA_is_kinda_fascist = yes
-			}
-		}
-
-		bypass = {
-
-		}
-
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-
-		search_filters = { FOCUS_FILTER_POLITICAL }
-
-		completion_reward = {
-
-			IF = {
-				limit = {
-					ITA = { is_in_faction = no }
-				}
-				ROOT = {
-					set_rule = { can_create_factions = yes }
-					create_faction = HUN_PACT_OF_ROME_FACTION
-					ITA = {
-						country_event = generic.5
-						add_ai_strategy = {
-							type = alliance
-							id = "HUN"
-							value = 200
-						}
-					}
-					IF = {
-						limit = {
-							country_exists = AUS
-							AUS = {
-								is_subject = no
-							}
-						}
-						AUS = {
-							country_event = generic.5
-						}
-					}
-				}
-			}
-			IF = {
-				limit = {
-					ITA = { is_faction_leader = yes }
-				}
-				ITA = {
-					country_event = generic.2
-				}
-			}
-			IF = {
-				limit = {
-					ITA = { is_in_faction_with = FRA }
-				}
-				FRA = {
-					country_event = generic.2
-				}
-			}
-			hidden_effect = {
-				IF = {
-					limit = {
-						has_country_leader = {
-							ruling_only = yes
-							character = HUN_miklos_horthy
-						}
-					}
-					news_event = { id = news.313 }
-				}
-			}
-
-		}
-	}
 
 	focus = {
 		id = wuw_HUN_parade_istvan_bethlens_platform

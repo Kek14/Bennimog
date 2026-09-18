@@ -41,7 +41,7 @@ focus_tree = {
 
 	focus = {
 		id = FIN_1
-		icon = GFX_goal_generic_axis_build_infantry
+		icon = GFX_focus_FIN_keepers_of_the_north
 		prerequisite = { focus = FIN_moderate_politics }
 		x = -2
 		y = 1
@@ -57,11 +57,8 @@ focus_tree = {
 			add_political_power = 200
 			add_offsite_building = { type = industrial_complex level = 3 }
 			add_offsite_building = { type = arms_factory level = 3 }
-			add_ideas = {
-			war_economy
-			extensive_conscription
-			fin_karelia
-			}
+			add_ideas = war_economy
+			
 	}
 	}
 
@@ -5103,7 +5100,7 @@ focus_tree = {
 
 		allow_branch = {
 			has_dlc = "Arms Against Tyranny"
-			has_completed_focus = FIN_a_new_course_for_kokoomus
+			#has_completed_focus = FIN_a_new_course_for_kokoomus
 			OR = {
 				has_country_leader = {
 					ruling_only = yes
